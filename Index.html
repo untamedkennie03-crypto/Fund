@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenn Kibate | Smart Phone Repairs & Tech Support</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <div class="logo-wrapper">
+                <i class="fa-solid fa-microchip logo-icon"></i>
+            </div>
+            <span class="brand-name">Kenn <span>Kibate</span></span>
+        </div>
+        <button class="menu-toggle" id="menuToggle" onclick="toggleTabs()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="nav-tabs" id="navTabs">
+            <a href="#home" class="nav-link" onclick="closeTabs()">Home</a>
+            <a href="#about" class="nav-link" onclick="closeTabs()">About Me</a>
+            <a href="#donate" class="nav-link gold-btn" onclick="closeTabs()">Support / M-Pesa</a>
+            <a href="#contact" class="nav-link" onclick="closeTabs()">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <span class="badge">Equipment Upgrade Campaign</span>
+                <h1>Precision Phone Repairs & Micro-Soldering</h1>
+                <p>Hi, I'm Kenn Kibate. I specialize in restoring damaged devices, motherboard repairs, and screen replacements. I am raising funds to acquire advanced lab equipment to expand my repair desk.</p>
+                <div class="hero-actions">
+                    <a href="#donate" class="btn btn-primary">Support My Workshop</a>
+                    <a href="#about" class="btn btn-outline">Read My Story</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="profile-frame">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600" alt="Kenn Kibate Working" class="profile-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2 class="section-title">About <span>Kenn Kibate</span></h2>
+            <div class="about-card">
+                <p>Driven by a passion for modern electronics and micro-engineering, I started fixing mobile devices from a small workbench. What began as a curiosity for hardware quickly turned into a dedicated local service, helping people retrieve invaluable data and repair expensive smartphones instead of discarding them.</p>
+                <p>This fundraiser aims to acquire a digital stereo microscope, precision hot-air reworking station, and specialized diagnostic kit. Your support directly enables me to deliver professional-grade repairs at affordable rates for our local community.</p>
+            </div>
+        </section>
+
+        <section id="donate" class="donate-section">
+            <h2 class="section-title">Fundraiser <span>M-Pesa Support</span></h2>
+            <div class="mpesa-card">
+                <div class="mpesa-header">
+                    <i class="fa-solid fa-mobile-retro mpesa-icon"></i>
+                    <h3>STK Push Contribution</h3>
+                    <p>Enter your Safaricom phone number below to receive an instant payment prompt on your handset.</p>
+                </div>
+                <form id="stkPushForm" onsubmit="handleStkPush(event)">
+                    <div class="form-group">
+                        <label for="phoneNumber">M-Pesa Phone Number</label>
+                        <input type="tel" id="phoneNumber" placeholder="0712345678 or 254712345678" requiredpattern="^(?:254|\+254|0)?(7|1)\d{8}$">
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Contribution Amount (KES)</label>
+                        <input type="number" id="amount" placeholder="e.g. 500" min="10" required>
+                    </div>
+                    <button type="submit" class="btn btn-mpesa" id="stkBtn">
+                        <i class="fa-solid fa-bolt"></i> Send STK Push
+                    </button>
+                </form>
+                <div id="stkStatus" class="status-message"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Get in <span>Touch</span></h2>
+            <div class="contact-card">
+                <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="name@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="How can I help you or how would you like to partner?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kenn Kibate. All rights reserved. | Phone Repair & Tech Specialist</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
