@@ -3,209 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenn Kibate - Fundraising Platform</title>
+    <title>Kenn Kibate | Smart Phone Repairs & Tech Support</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
+
+    <header class="navbar">
         <div class="logo-container">
             <div class="logo-wrapper">
-                <span class="logo-icon">💰</span>
+                <i class="fa-solid fa-microchip logo-icon"></i>
             </div>
-            <div class="brand-name">
-                Kenn<span>Fund</span>
-            </div>
+            <span class="brand-name">Kenn <span>Kibate</span></span>
         </div>
-        <button class="menu-toggle" onclick="toggleTabs()">
+        <button class="menu-toggle" id="menuToggle" onclick="toggleTabs()">
             <i class="fa-solid fa-bars"></i>
         </button>
-        <div class="nav-tabs" id="navTabs">
+        <nav class="nav-tabs" id="navTabs">
             <a href="#home" class="nav-link" onclick="closeTabs()">Home</a>
-            <a href="#about" class="nav-link" onclick="closeTabs()">About</a>
-            <a href="#donate" class="nav-link" onclick="closeTabs()">Donate</a>
-            <a href="#contact" class="nav-link gold-btn" onclick="closeTabs()">Contact</a>
-        </div>
-    </nav>
+            <a href="#about" class="nav-link" onclick="closeTabs()">About Me</a>
+            <a href="#donate" class="nav-link gold-btn" onclick="closeTabs()">Support / M-Pesa</a>
+            <a href="#contact" class="nav-link" onclick="closeTabs()">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="container">
-        <div class="hero-section">
+    <main class="container">
+
+        <section id="home" class="hero-section">
             <div class="hero-content">
-                <span class="badge">💡 Support a Vision</span>
-                <h1>Help Me Build Something <span style="color: #ffd700;">Extraordinary</span></h1>
-                <p>Join me in creating impactful solutions. Your contribution directly fuels innovation, growth, and positive change in our community.</p>
+                <span class="badge">Equipment Upgrade Campaign</span>
+                <h1>Precision Phone Repairs & Micro-Soldering</h1>
+                <p>Hi, I'm Kenn Kibate. I specialize in restoring damaged devices, motherboard repairs, and screen replacements. I am raising funds to acquire advanced lab equipment to expand my repair desk.</p>
                 <div class="hero-actions">
-                    <a href="#donate" class="btn btn-primary">
-                        <i class="fa-solid fa-heart"></i> Donate Now
-                    </a>
-                    <a href="#about" class="btn btn-outline">
-                        <i class="fa-solid fa-info-circle"></i> Learn More
-                    </a>
+                    <a href="#donate" class="btn btn-primary">Support My Workshop</a>
+                    <a href="#about" class="btn btn-outline">Read My Story</a>
                 </div>
             </div>
-            <div class="profile-frame">
-                <img src="https://via.placeholder.com/320x320?text=Kenn+Kibate" alt="Kenn Kibate" class="profile-img">
+            <div class="hero-image-wrapper">
+                <div class="profile-frame">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600" alt="Kenn Kibate Working" class="profile-img">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About <span>My Mission</span></h2>
+        <section id="about" class="about-section">
+            <h2 class="section-title">About <span>Kenn Kibate</span></h2>
             <div class="about-card">
-                <p><strong>Hello! I'm Kenn Kibate.</strong></p>
-                <p style="margin-top: 1rem; color: #94a3b8;">
-                    I'm a passionate developer and entrepreneur dedicated to creating innovative digital solutions 
-                    that make a difference. This fundraising initiative aims to accelerate my projects and expand 
-                    their reach to help more people.
-                </p>
-                <p style="margin-top: 1rem; color: #94a3b8;">
-                    With your support, I can:
-                </p>
-                <ul style="margin-top: 1rem; margin-left: 2rem; color: #94a3b8;">
-                    <li>🚀 Launch cutting-edge projects</li>
-                    <li>💻 Invest in better tools and infrastructure</li>
-                    <li>🌍 Expand reach and impact in the community</li>
-                    <li>👥 Build a stronger team to execute faster</li>
-                </ul>
-                <p style="margin-top: 1.5rem; color: #ffd700; font-weight: 600;">
-                    Every contribution, no matter the size, brings us closer to making this vision a reality. Thank you! 🙏
-                </p>
+                <p>Driven by a passion for modern electronics and micro-engineering, I started fixing mobile devices from a small workbench. What began as a curiosity for hardware quickly turned into a dedicated local service, helping people retrieve invaluable data and repair expensive smartphones instead of discarding them.</p>
+                <p>This fundraiser aims to acquire a digital stereo microscope, precision hot-air reworking station, and specialized diagnostic kit. Your support directly enables me to deliver professional-grade repairs at affordable rates for our local community.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- M-Pesa Donation Section -->
-    <section id="donate">
-        <div class="container">
-            <h2 class="section-title">Make a <span>Donation</span></h2>
+        <section id="donate" class="donate-section">
+            <h2 class="section-title">Fundraiser <span>M-Pesa Support</span></h2>
             <div class="mpesa-card">
                 <div class="mpesa-header">
-                    <div class="mpesa-icon">
-                        <i class="fa-solid fa-mobile"></i>
-                    </div>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">M-Pesa Payment</h3>
-                    <p style="color: #94a3b8; font-size: 0.9rem;">Fast, secure, and convenient donations via M-Pesa</p>
+                    <i class="fa-solid fa-mobile-retro mpesa-icon"></i>
+                    <h3>STK Push Contribution</h3>
+                    <p>Enter your Safaricom phone number below to receive an instant payment prompt on your handset.</p>
                 </div>
-
-                <form onsubmit="handleStkPush(event)">
+                <form id="stkPushForm" onsubmit="handleStkPush(event)">
                     <div class="form-group">
-                        <label for="phoneNumber">Phone Number (254...)</label>
-                        <input 
-                            type="tel" 
-                            id="phoneNumber" 
-                            placeholder="254712345678" 
-                            required 
-                            pattern="254[0-9]{9}"
-                        >
+                        <label for="phoneNumber">M-Pesa Phone Number</label>
+                        <input type="tel" id="phoneNumber" placeholder="0712345678 or 254712345678" requiredpattern="^(?:254|\+254|0)?(7|1)\d{8}$">
                     </div>
-
                     <div class="form-group">
-                        <label for="amount">Amount (KES)</label>
-                        <input 
-                            type="number" 
-                            id="amount" 
-                            placeholder="100" 
-                            min="50" 
-                            max="150000"
-                            required
-                        >
+                        <label for="amount">Contribution Amount (KES)</label>
+                        <input type="number" id="amount" placeholder="e.g. 500" min="10" required>
                     </div>
-
                     <button type="submit" class="btn btn-mpesa" id="stkBtn">
                         <i class="fa-solid fa-bolt"></i> Send STK Push
                     </button>
-
-                    <div class="status-message" id="stkStatus"></div>
                 </form>
-
-                <p style="text-align: center; margin-top: 1.5rem; color: #94a3b8; font-size: 0.85rem;">
-                    <i class="fa-solid fa-lock"></i> Your payment information is secure and encrypted.
-                </p>
+                <div id="stkStatus" class="status-message"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
+        <section id="contact" class="contact-section">
             <h2 class="section-title">Get in <span>Touch</span></h2>
             <div class="contact-card">
                 <form id="contactForm" onsubmit="handleContactSubmit(event)">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            placeholder="Your Name" 
-                            required
-                        >
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="Your Name" required>
                     </div>
-
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            placeholder="your@email.com" 
-                            required
-                        >
+                        <input type="email" id="email" placeholder="name@example.com" required>
                     </div>
-
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input 
-                            type="text" 
-                            id="subject" 
-                            placeholder="How can we help?" 
-                            required
-                        >
-                    </div>
-
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea 
-                            id="message" 
-                            placeholder="Your message here..." 
-                            rows="5" 
-                            required
-                        ></textarea>
+                        <textarea id="message" rows="5" placeholder="How can I help you or how would you like to partner?" required></textarea>
                     </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        <i class="fa-solid fa-paper-plane"></i> Send Message
-                    </button>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
-
-                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1e293b;">
-                    <p style="color: #94a3b8; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-envelope"></i> Email: kenn@example.com
-                    </p>
-                    <p style="color: #94a3b8;">
-                        <i class="fa-solid fa-phone"></i> Phone: +254 712 345 678
-                    </p>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+    </main>
+
     <footer>
-        <p>&copy; 2026 Kenn Kibate. All rights reserved.</p>
-        <p>
-            <a href="#" style="color: #00f2fe; text-decoration: none; margin: 0 0.5rem;">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="#" style="color: #00f2fe; text-decoration: none; margin: 0 0.5rem;">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="#" style="color: #00f2fe; text-decoration: none; margin: 0 0.5rem;">
-                <i class="fa-brands fa-github"></i>
-            </a>
-        </p>
+        <p>&copy; 2026 Kenn Kibate. All rights reserved. | Phone Repair & Tech Specialist</p>
     </footer>
 
     <script src="script.js"></script>
