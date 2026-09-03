@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenn Kibate - Fundraising Platform</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo-wrapper">
+                <span class="logo-icon">💰</span>
+            </div>
+            <div class="brand-name">
+                Kenn<span>Fund</span>
+            </div>
+        </div>
+        <button class="menu-toggle" onclick="toggleTabs()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="nav-tabs" id="navTabs">
+            <a href="#home" class="nav-link" onclick="closeTabs()">Home</a>
+            <a href="#about" class="nav-link" onclick="closeTabs()">About</a>
+            <a href="#donate" class="nav-link" onclick="closeTabs()">Donate</a>
+            <a href="#contact" class="nav-link gold-btn" onclick="closeTabs()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <span class="badge">💡 Support a Vision</span>
+                <h1>Help Me Build Something <span style="color: #ffd700;">Extraordinary</span></h1>
+                <p>Join me in creating impactful solutions. Your contribution directly fuels innovation, growth, and positive change in our community.</p>
+                <div class="hero-actions">
+                    <a href="#donate" class="btn btn-primary">
+                        <i class="fa-solid fa-heart"></i> Donate Now
+                    </a>
+                    <a href="#about" class="btn btn-outline">
+                        <i class="fa-solid fa-info-circle"></i> Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="profile-frame">
+                <img src="https://via.placeholder.com/320x320?text=Kenn+Kibate" alt="Kenn Kibate" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>My Mission</span></h2>
+            <div class="about-card">
+                <p><strong>Hello! I'm Kenn Kibate.</strong></p>
+                <p style="margin-top: 1rem; color: #94a3b8;">
+                    I'm a passionate developer and entrepreneur dedicated to creating innovative digital solutions 
+                    that make a difference. This fundraising initiative aims to accelerate my projects and expand 
+                    their reach to help more people.
+                </p>
+                <p style="margin-top: 1rem; color: #94a3b8;">
+                    With your support, I can:
+                </p>
+                <ul style="margin-top: 1rem; margin-left: 2rem; color: #94a3b8;">
+                    <li>🚀 Launch cutting-edge projects</li>
+                    <li>💻 Invest in better tools and infrastructure</li>
+                    <li>🌍 Expand reach and impact in the community</li>
+                    <li>👥 Build a stronger team to execute faster</li>
+                </ul>
+                <p style="margin-top: 1.5rem; color: #ffd700; font-weight: 600;">
+                    Every contribution, no matter the size, brings us closer to making this vision a reality. Thank you! 🙏
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- M-Pesa Donation Section -->
+    <section id="donate">
+        <div class="container">
+            <h2 class="section-title">Make a <span>Donation</span></h2>
+            <div class="mpesa-card">
+                <div class="mpesa-header">
+                    <div class="mpesa-icon">
+                        <i class="fa-solid fa-mobile"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">M-Pesa Payment</h3>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Fast, secure, and convenient donations via M-Pesa</p>
+                </div>
+
+                <form onsubmit="handleStkPush(event)">
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number (254...)</label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            placeholder="254712345678" 
+                            required 
+                            pattern="254[0-9]{9}"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount (KES)</label>
+                        <input 
+                            type="number" 
+                            id="amount" 
+                            placeholder="100" 
+                            min="50" 
+                            max="150000"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-mpesa" id="stkBtn">
+                        <i class="fa-solid fa-bolt"></i> Send STK Push
+                    </button>
+
+                    <div class="status-message" id="stkStatus"></div>
+                </form>
+
+                <p style="text-align: center; margin-top: 1.5rem; color: #94a3b8; font-size: 0.85rem;">
+                    <i class="fa-solid fa-lock"></i> Your payment information is secure and encrypted.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in <span>Touch</span></h2>
+            <div class="contact-card">
+                <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            placeholder="Your Name" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="your@email.com" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            placeholder="How can we help?" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea 
+                            id="message" 
+                            placeholder="Your message here..." 
+                            rows="5" 
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1e293b;">
+                    <p style="color: #94a3b8; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-envelope"></i> Email: kenn@example.com
+                    </p>
+                    <p style="color: #94a3b8;">
+                        <i class="fa-solid fa-phone"></i> Phone: +254 712 345 678
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Kenn Kibate. All rights reserved.</p>
+        <p>
+            <a href="#" style="color: #00f2fe; text-decoration: none; margin: 0 0.5rem;">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" style="color: #00f2fe; text-decoration: none; margin: 0 0.5rem;">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="#" style="color: #00f2fe; text-decoration: none; margin: 0 0.5rem;">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
